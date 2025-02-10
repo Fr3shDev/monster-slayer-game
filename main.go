@@ -1,6 +1,10 @@
 package main
 
-import "github.com/Fr3shDev/monster-slayer-game/interaction"
+import (
+	"fmt"
+
+	"github.com/Fr3shDev/monster-slayer-game/interaction"
+)
 
 var currentRound = 0
 
@@ -25,6 +29,11 @@ func executeRound() string {
 	isSpecialRound := currentRound%3 == 0
 
 	interaction.ShowAvailableActions(isSpecialRound)
+	userChoice := interaction.GetPlayerChoice(isSpecialRound)
+
+	fmt.Println(userChoice)
+
+	return ""
 }
 
 func endGame() {}
